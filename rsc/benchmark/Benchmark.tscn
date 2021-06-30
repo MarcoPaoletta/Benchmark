@@ -1,0 +1,49 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://rsc/benchmark/MarginContainer.gd" type="Script" id=1]
+
+[node name="Benchmark" type="CanvasLayer"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_left = 39.6427
+margin_top = 60.408
+margin_right = 103.643
+margin_bottom = 112.408
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 63.0
+margin_bottom = 66.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+margin_right = 53.0
+margin_bottom = 56.0
+alignment = 2
+
+[node name="FPS" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 53.0
+margin_bottom = 14.0
+text = "State 1"
+
+[node name="Memory" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 53.0
+margin_bottom = 32.0
+text = "State 2"
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+margin_top = 36.0
+margin_right = 53.0
+margin_bottom = 56.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Vsyinc"
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Button" to="MarginContainer" method="_on_Button_pressed"]
